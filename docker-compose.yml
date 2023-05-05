@@ -9,3 +9,9 @@ services:
     container_name: kafka-producer
     ports:
       - 9000:9000
+
+  consumer:
+    build: ./consumer
+    container_name: kafka-consumer
+    ports:
+    - 9001:9001
