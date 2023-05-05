@@ -3,3 +3,9 @@ services:
     image: 'bitnami/kafka:latest'
     environment:
       - ALLOW_PLAINTEXT_LISTENER=yes
+
+  producer:
+    build: ./producer
+    container_name: kafka-producer
+    ports:
+      - 9000:9000
