@@ -11,12 +11,12 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 @RestController
 public class Producer {
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+  @Autowired
+  private KafkaTemplate<String, String> kafkaTemplate;
 
-    @PostMapping("api/messages")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void sendMessage(@RequestBody String message) {
-        kafkaTemplate.send("messages", message);
-    }
+  @PostMapping("api/messages")
+  @ResponseStatus(value = HttpStatus.NO_CONTENT)
+  public void sendMessage(@RequestBody String message) {
+    kafkaTemplate.send("messages", message);
+  }
 }
