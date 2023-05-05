@@ -1,8 +1,9 @@
 FROM eclipse-temurin:17-jdk-alpine
-WORKDIR /producer
+WORKDIR /consumer
 
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
+COPY messages.txt ./
 
 RUN ./mvnw dependency:go-offline
 COPY src ./src

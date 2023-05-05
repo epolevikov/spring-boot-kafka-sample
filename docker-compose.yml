@@ -15,3 +15,5 @@ services:
     container_name: kafka-consumer
     ports:
     - 9001:9001
+    volumes:
+      - ./consumer/messages.txt:/consumer/messages.txt
