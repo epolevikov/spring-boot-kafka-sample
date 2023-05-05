@@ -10,7 +10,7 @@ runs
 2. **kafka** (port 9092), to which
 3. **consumer** (port 9001) is subscribed.
 
-**Consumer** reads messages from **kafka** and writes them to `messages.txt` file.
+**Consumer** reads messages from **kafka** and writes them to `consumer/messages.txt` file.
 
 ## Example
 
