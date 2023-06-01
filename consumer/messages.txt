@@ -1,3 +1,0 @@
-Message one
-Message two
-Message three

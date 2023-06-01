@@ -3,7 +3,8 @@ WORKDIR /consumer
 
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-COPY messages.txt ./
+COPY messages_1.txt ./
+COPY messages_2.txt ./
 
 RUN ./mvnw dependency:go-offline
 COPY src ./src

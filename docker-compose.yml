@@ -18,4 +18,5 @@ services:
     ports:
     - 9001:9001
     volumes:
-      - ./consumer/messages.txt:/consumer/messages.txt
+      - ./consumer/messages_1.txt:/consumer/messages_1.txt
+      - ./consumer/messages_2.txt:/consumer/messages_2.txt
