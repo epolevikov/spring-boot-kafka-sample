@@ -10,7 +10,9 @@ runs
 2. **kafka** (port 9092), to which
 3. **consumer** (port 9001) is subscribed.
 
-**Consumer** reads messages from **kafka** and writes them to `consumer/messages.txt` file.
+**Kafka** contains one topic called _messages_. The topic consists of one partition.
+
+**Consumer** contains two kafka listeners that read messages from the _messages_ topic. Each of the consumers then writes a message to a text file. Since the consumers belong to different consumer groups, each message is processed by both the consumers.
 
 ## Example
 
@@ -22,4 +24,4 @@ Message two
 Message three
 ```
 
-Then run `cat consumer/messages.txt` to make sure that the messages were processed correctly and were written to the file.
+Then run `cat consumer/messages_{1,2}.txt` to make sure that the messages were processed correctly and were written to the files.
