@@ -6,13 +6,13 @@
 
 runs
 
-1. **producer**, which listens for http requests on `localhost:9000/api/messages` and writes messages to
-2. **kafka** (port 9092), to which
-3. **consumer** (port 9001) is subscribed.
+1. **Producer**, port 9000
+2. **Kafka**, port 9092
+3. **Consumer**, port 9001
 
-**Kafka** contains one topic called _messages_. The topic consists of one partition.
+**Producer** provides one endpoint named `api/messages`. This endpoint accepts HTTP requests with the `text/plain` content type. The content of the request body is sent to **Kafka** (specifically, to the _messages_ topic, which consists of one partition).
 
-**Consumer** contains two kafka listeners that read messages from the _messages_ topic. Each of the consumers then writes a message to a text file. Since the consumers belong to different consumer groups, each message is processed by both the consumers.
+**Consumer** contains two kafka listeners that read messages from **Kafka**'s _messages_ topic. Each of the consumers then writes a message to a text file. Since the consumers belong to different consumer groups, each message is processed by both of the consumers.
 
 ## Example
 
