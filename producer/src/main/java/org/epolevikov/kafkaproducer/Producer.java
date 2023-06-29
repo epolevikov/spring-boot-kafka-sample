@@ -14,7 +14,7 @@ public class Producer {
   @Autowired
   private KafkaTemplate<String, String> kafkaTemplate;
 
-  @PostMapping("api/messages")
+  @PostMapping("api/kafka-topics")
   @ResponseStatus(value = HttpStatus.NO_CONTENT)
   public void sendMessage(@RequestBody MessageDto message) {
     kafkaTemplate.send(message.getTopic(), message.getMessage())

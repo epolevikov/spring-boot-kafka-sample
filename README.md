@@ -10,7 +10,7 @@ runs
 2. **Kafka**, port 9092
 3. **Consumer**, port 9001
 
-**Producer** provides one endpoint named `api/messages`. This endpoint accepts HTTP requests with the `application/json` content type. The request body should match the following schema:
+**Producer** provides one endpoint named `api/kafka-topics`. This endpoint accepts HTTP requests with the `application/json` content type. The request body should match the following schema:
 
 ```
 {

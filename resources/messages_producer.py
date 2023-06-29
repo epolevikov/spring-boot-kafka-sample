@@ -14,7 +14,7 @@ def main():
                 "message": message
             }
             
-            response = requests.post("http://localhost:9000/api/messages", json=request_body)
+            response = requests.post("http://localhost:9000/api/kafka-topics", json=request_body)
             
             if 200 <= response.status_code < 300:
                 print(f"messaage '{message}' successfully sent to topic '{topic}'")
