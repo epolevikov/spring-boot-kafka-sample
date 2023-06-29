@@ -16,7 +16,17 @@ public class Producer {
 
   @PostMapping("api/messages")
   @ResponseStatus(value = HttpStatus.NO_CONTENT)
-  public void sendMessage(@RequestBody String message) {
-    kafkaTemplate.send("messages", message);
+  public void sendMessage(@RequestBody MessageDto message) {
+    kafkaTemplate.send(message.getTopic(), message.getMessage())
+        .whenComplete((sendResult, error) -> {
+          if (sendResult != null) {
+            System.out.println("Message " + message.getMessage() +
+                " successfully sent to topic " + message.getTopic());
+          } else {
+            System.out.println("Error happened while sending message "
+                + message.getMessage() + " to topic " + message.getTopic()
+                + ". Details: " + error.getMessage());
+          }
+        });
   }
 }
