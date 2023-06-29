@@ -28,5 +28,9 @@ public class Producer {
                 + ". Details: " + error.getMessage());
           }
         });
+
+    // kafkaTemplate blocks on 'send' and infinitely polls a topic if
+    // the topic does not exist. TODO: fix the issue (maybe somehow
+    // specify a timeout?).
   }
 }

@@ -3,6 +3,7 @@ services:
     image: 'bitnami/kafka:latest'
     environment:
       - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_AUTO_CREATE_TOPICS_ENABLE=false
     ports:
       - 9092:9092
 
